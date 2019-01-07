@@ -1,0 +1,17 @@
+.boxCmt{
+    box-shadow: 0 0 10px #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+.title{
+    font-size: 16px;
+}
+
+.content{
+    font-size: 14px;
+}
+/*使用这种方式写的不会被模块化*/
+:global(.test){
+    font-style: italic;
+}

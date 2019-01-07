@@ -1,0 +1,14 @@
+body{
+    /*background-color: cyan;*/
+}
+.title{
+    color: red;
+    font-size: 35px;
+    text-align: center;
+}
+/*css模块化只会将id和类选择器生效
+  对标签选择器无效，下面的h1会作用到全局
+*/
+h1{
+    font-style: italic;
+}
