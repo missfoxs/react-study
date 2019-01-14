@@ -33,7 +33,9 @@ class CommonList extends React.Component{
             {/*<p style={{color: "red", fontSize: "35px", fontWeight: 200, textAlign: "center"}}>这是评论列表项</p>*/}
             <p className={[cssObj.title, "test"].join(" ")}>这是评论列表项</p>
             <h1>this is a common list</h1>
-            {/* onClick 里面只能使用function*/}
+            {/* onClick 里面只能使用function, 因此这样要写函数的引用，写箭头函数一方面是为了传递参数，更重要的是绑定引用，
+                在这个箭头函数中this绑定到了当前的组件上，不用箭头函数将会是这样的写法,<button onClick={this.show.bind(this)}>Click</button>或者在构造器中声明
+            */}
             <button className="btn btn-primary" onClick={() => {this.show("(～￣(OO)￣)ブ")}}>按钮</button>
             <h1>{this.state.msg}</h1>
             {/*文本框中要不添加readOnly，要不就是用onChange事件*/}

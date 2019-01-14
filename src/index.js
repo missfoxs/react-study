@@ -36,7 +36,7 @@ ReactDOM.render(
         <div className="qwer">我是名侦探柯南</div>
         {/*使用组件的方式*/}
         {/*<MyComponent {...user}>     这种方式不知为何无法使用*/}
-        <MyComponent user={user}>
+        <MyComponent user={user} address="北京石景山">
         </MyComponent>
 
         <CreatComponentWithClass {...user}>
