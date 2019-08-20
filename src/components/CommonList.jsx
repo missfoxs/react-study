@@ -17,8 +17,8 @@ class CommonList extends React.Component{
                 {id: 1, user: "张三", content: "哈哈，沙发"},
                 {id: 2, user: "李四", content: "哈哈，板凳"},
                 {id: 3, user: "王五", content: "哈哈，凉席"},
-                {id: 4, user: "小明", content: "哈哈，nmsl"},
-                {id: 5, user: "狗项", content: "哈哈，沙雕"},
+                {id: 4, user: "小明", content: "哈哈，n1111"},
+                {id: 5, user: "项", content: "哈哈，沙雕"},
             ],
             msg: "哈哈哈"
         }
@@ -45,9 +45,16 @@ class CommonList extends React.Component{
                 return <CommonItem {...item} key={item.id}>
                 </CommonItem>;
             })}
+
+            <button onClick={this.handleClick.bind(this)}>点击点击</button>
         </div>
     }
-
+    // 使用传统的es6的方法时，要绑定this.
+    handleClick(){
+        console.log(this);
+        this.setState({msg: 'eeeeeeeeeeeeeeeeee'})
+    }
+    // 这种写法可以使用babel转换，es6的class中没有这种写法。
     show = (arg1)=>{
         // 1、只改变msg的值，其他的不变
         this.setState({
@@ -63,15 +70,15 @@ class CommonList extends React.Component{
     changText = (e) => {
         // 获取input数据的两种方式
         // 1、传参数
-        // let newValue = e.target.value;
-        // this.setState({
-        //     msg: newValue
-        // });
-        // 2、 使用ref
-        let newValue = this.refs.testInput.value;
+        let newValue = e.target.value;
         this.setState({
             msg: newValue
-        })
+        });
+        // 2、 使用ref
+        // let newValue = this.refs.testInput.value;
+        // this.setState({
+        //     msg: newValue
+        // })
     }
 }
 
